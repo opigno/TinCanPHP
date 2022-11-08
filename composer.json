@@ -11,6 +11,9 @@
         "e-learning",
         "scorm"
     ],
+    "replace": {
+        "rusticisoftware/tincan": "*"
+    },
     "license": "Apache-2.0",
     "authors": [
         {
