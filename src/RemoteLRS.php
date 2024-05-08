@@ -137,7 +137,7 @@ class RemoteLRS implements LRSInterface
         // normal handling
         //
         set_error_handler(
-            function ($errno, $errstr, $errfile, $errline, array $errcontext) {
+            function ($errno, $errstr, $errfile, $errline) {
                 // "!== false" is intentional. strpos() can return 0, which is falsey, but returning
                 // 0 matches our "true" condition. Using strict equality to avoid that confusion.
                 if ($errno == E_NOTICE && strpos($errstr, 'Array to string conversion') !== false) {
