@@ -23,8 +23,8 @@ class Group extends Agent
 
     protected $member;
 
-    public function __construct() {
-        call_user_func_array('parent::__construct', func_get_args());
+    public function __construct(...$args) {
+        parent::__construct(...$args);
 
         if (! isset($this->member)) {
             $this->setMember(array());

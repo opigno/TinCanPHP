@@ -19,8 +19,9 @@ namespace TinCanTest;
 
 use TinCan\Person;
 
-class PersonTest extends \PHPUnit_Framework_TestCase {
+class PersonTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
+    use TestPhpUnitAssertionTrait;
 
     public function testInstantiation() {
         $obj = new Person();
@@ -33,17 +34,17 @@ class PersonTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testFromJSONInvalidNull() {
-        $this->setExpectedException('TinCan\JSONParseErrorException');
+        $this->expectException('TinCan\JSONParseErrorException');
         $obj = Person::fromJSON(null);
     }
 
     public function testFromJSONInvalidEmptyString() {
-        $this->setExpectedException('TinCan\JSONParseErrorException');
+        $this->expectException('TinCan\JSONParseErrorException');
         $obj = Person::fromJSON('');
     }
 
     public function testFromJSONInvalidMalformed() {
-        $this->setExpectedException('TinCan\JSONParseErrorException');
+        $this->expectException('TinCan\JSONParseErrorException');
         $obj = Person::fromJSON('{name:"some value"}');
     }
 
@@ -95,7 +96,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase {
         // make sure it doesn't add mailto when null
         //
         $obj->setMbox(null);
-        $this->assertAttributeEmpty('mbox', $obj);
+        $this->assertAttributeEmpty('mbox', $obj, 'mbox empty');
     }
 
     public function testGetMbox_sha1sum() {

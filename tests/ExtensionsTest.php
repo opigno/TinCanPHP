@@ -19,7 +19,7 @@ namespace TinCanTest;
 
 use TinCan\Extensions;
 
-class ExtensionsTest extends \PHPUnit_Framework_TestCase {
+class ExtensionsTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
 
     public function testInstantiation() {

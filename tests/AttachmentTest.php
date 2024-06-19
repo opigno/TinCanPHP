@@ -20,9 +20,10 @@ namespace TinCanTest;
 use TinCan\Attachment;
 use TinCan\Version;
 
-class AttachmentTest extends \PHPUnit_Framework_TestCase {
+class AttachmentTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
-
+    use TestPhpUnitAssertionTrait;
+    
     const USAGE_TYPE     = 'http://id.tincanapi.com/attachment/supporting_media';
     const DISPLAY        = 'testDisplay';
     const DESCRIPTION    = 'Test description.';

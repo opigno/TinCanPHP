@@ -19,8 +19,9 @@ namespace TinCanTest;
 
 use TinCan\AgentAccount;
 
-class AgentAccountTest extends \PHPUnit_Framework_TestCase {
+class AgentAccountTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
+    use TestPhpUnitAssertionTrait;
 
     const HOMEPAGE = 'http://tincanapi.com';
     const NAME = 'test';

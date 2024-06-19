@@ -19,11 +19,11 @@ namespace TinCanTest;
 
 use TinCan\Util;
 
-class UtilTest extends \PHPUnit_Framework_TestCase {
+class UtilTest extends \PHPUnit\Framework\TestCase {
     public function testGetUUID() {
         $result = Util::getUUID();
 
-        $this->assertRegExp(Util::UUID_REGEX, $result);
+        $this->assertMatchesRegularExpression(Util::UUID_REGEX, $result);
     }
 
     public function testGetTimestamp() {
@@ -34,6 +34,6 @@ class UtilTest extends \PHPUnit_Framework_TestCase {
         // catch regressions, at least more than will be accepted by an LRS which is really
         // ultimately what we want in our tests
         //
-        $this->assertRegExp('/\d\d\d\d-[01]\d-[0123]\dT[012]\d:[012345]\d:[012345]\d\.\d\d\d\+00:00/', $result);
+        $this->assertMatchesRegularExpression('/\d\d\d\d-[01]\d-[0123]\dT[012]\d:[012345]\d:[012345]\d\.\d\d\d\+00:00/', $result);
     }
 }

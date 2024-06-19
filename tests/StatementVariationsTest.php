@@ -22,10 +22,12 @@ use TinCan\RemoteLRS;
 use TinCan\Statement;
 use TinCan\Util;
 
-class StatementVariationsTest extends \PHPUnit_Framework_TestCase {
+class StatementVariationsTest extends \PHPUnit\Framework\TestCase {
+    use TestPhpUnitAssertionTrait;
+
     static protected $lrss;
 
-    static public function setUpBeforeClass() {
+    static public function setUpBeforeClass(): void {
         self::$lrss = [];
 
         foreach ($GLOBALS['LRSs'] as $lrs_cfg) {

@@ -25,7 +25,7 @@ class SignatureComparisonStub {
     }
 }
 
-class SignatureComparisonTraitTest extends \PHPUnit_Framework_TestCase {
+class SignatureComparisonTraitTest extends \PHPUnit\Framework\TestCase {
     public function testDoMatch() {
         $description = "A test Description";
 
