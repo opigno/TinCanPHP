@@ -20,7 +20,7 @@ namespace TinCanTest;
 use TinCan\ActivityProfile;
 use TinCan\Activity;
 
-class ActivityProfileTest extends \PHPUnit_Framework_TestCase {
+class ActivityProfileTest extends \PHPUnit\Framework\TestCase {
     public function testSetActivity() {
         $profile = new ActivityProfile();
         $profile->setActivity(['id' => COMMON_ACTIVITY_ID]);

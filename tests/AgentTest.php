@@ -20,7 +20,7 @@ namespace TinCanTest;
 use TinCan\Agent;
 use TinCan\AgentAccount;
 
-class AgentTest extends \PHPUnit_Framework_TestCase {
+class AgentTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
 
     public function testInstantiation() {
@@ -34,17 +34,17 @@ class AgentTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testFromJSONInvalidNull() {
-        $this->setExpectedException('TinCan\JSONParseErrorException');
+        $this->expectException('TinCan\JSONParseErrorException');
         $obj = Agent::fromJSON(null);
     }
 
     public function testFromJSONInvalidEmptyString() {
-        $this->setExpectedException('TinCan\JSONParseErrorException');
+        $this->expectException('TinCan\JSONParseErrorException');
         $obj = Agent::fromJSON('');
     }
 
     public function testFromJSONInvalidMalformed() {
-        $this->setExpectedException('TinCan\JSONParseErrorException');
+        $this->expectException('TinCan\JSONParseErrorException');
         $obj = Agent::fromJSON('{name:"some value"}');
     }
 

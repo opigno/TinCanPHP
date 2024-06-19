@@ -26,7 +26,7 @@ use TinCan\Result;
 
 class StubStatementBase extends StatementBase {}
 
-class StatementBaseTest extends \PHPUnit_Framework_TestCase {
+class StatementBaseTest extends \PHPUnit\Framework\TestCase {
     public function testInstantiation() {
         $obj = new StubStatementBase();
     }
@@ -60,7 +60,7 @@ class StatementBaseTest extends \PHPUnit_Framework_TestCase {
 
     public function testSetTargetInvalidArgumentException() {
         $badObjectType = 'imABadObjectType';
-        $this->setExpectedException(
+        $this->expectException(
             "InvalidArgumentException",
             "arg1 must implement the StatementTargetInterface objectType not recognized:$badObjectType"
         );
@@ -81,7 +81,7 @@ class StatementBaseTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetTimestampInvalidArgumentException() {
-        $this->setExpectedException(
+        $this->expectException(
             "InvalidArgumentException",
             'type of arg1 must be string or DateTime'
         );

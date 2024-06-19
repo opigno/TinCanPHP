@@ -20,7 +20,7 @@ namespace TinCanTest;
 use TinCan\Activity;
 use TinCan\ContextActivities;
 
-class ContextActivitiesTest extends \PHPUnit_Framework_TestCase {
+class ContextActivitiesTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
 
     static private $listProps = ['category', 'parent', 'grouping', 'other'];
@@ -281,7 +281,7 @@ class ContextActivitiesTest extends \PHPUnit_Framework_TestCase {
      * @dataProvider invalidListSetterDataProvider
      */
     public function testListSetterThrowsInvalidArgumentException($publicMethodName, $invalidValue) {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'type of arg1 must be Activity, array of Activity properties, or array of Activity/array of Activity properties'
         );

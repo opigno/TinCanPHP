@@ -25,7 +25,7 @@ use TinCan\SubStatement;
 use TinCan\Util;
 use TinCan\Verb;
 
-class SubStatementTest extends \PHPUnit_Framework_TestCase {
+class SubStatementTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
 
     public function testInstantiation() {

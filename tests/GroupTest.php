@@ -21,7 +21,7 @@ use TinCan\Agent;
 use TinCan\AgentAccount;
 use TinCan\Group;
 
-class GroupTest extends \PHPUnit_Framework_TestCase {
+class GroupTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
 
     public function testInstantiation() {

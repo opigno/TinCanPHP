@@ -21,9 +21,9 @@ use TinCan\Document;
 
 class StubDocument extends Document {}
 
-class DocumentTest extends \PHPUnit_Framework_TestCase {
+class DocumentTest extends \PHPUnit\Framework\TestCase {
     public function testExceptionOnInvalidDateTime() {
-        $this->setExpectedException(
+        $this->expectException(
             "InvalidArgumentException",
             'type of arg1 must be string or DateTime'
         );

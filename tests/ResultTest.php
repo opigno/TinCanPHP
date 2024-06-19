@@ -21,7 +21,7 @@ use TinCan\Extensions;
 use TinCan\Result;
 use TinCan\Score;
 
-class ResultTest extends \PHPUnit_Framework_TestCase {
+class ResultTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
 
     private $emptyProperties = array(

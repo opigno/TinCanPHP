@@ -20,7 +20,7 @@ namespace TinCanTest;
 use TinCan\State;
 use TinCan\Group;
 
-class StateTest extends \PHPUnit_Framework_TestCase {
+class StateTest extends \PHPUnit\Framework\TestCase {
     public function testCanSetActivityWithArray() {
         $args = [
             'id' => COMMON_ACTIVITY_ID,
@@ -44,7 +44,7 @@ class StateTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testExceptionOnInvalidRegistrationUUID() {
-        $this->setExpectedException(
+        $this->expectException(
             "InvalidArgumentException",
             'arg1 must be a UUID'
         );

@@ -19,7 +19,7 @@ namespace TinCanTest;
 
 use TinCan\Score;
 
-class ScoreTest extends \PHPUnit_Framework_TestCase {
+class ScoreTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
 
     private $emptyProperties = array(
@@ -58,7 +58,7 @@ class ScoreTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetScaledBelowMin() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             sprintf('Value must be greater than or equal to %s [-5]', Score::SCALE_MIN)
         );
@@ -67,7 +67,7 @@ class ScoreTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetScaledAboveMax() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             sprintf('Value must be less than or equal to %s [5]', Score::SCALE_MAX)
         );
@@ -96,7 +96,7 @@ class ScoreTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetRawBelowMin() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'Value must be greater than or equal to \'min\' (60) [50]'
         );
@@ -105,7 +105,7 @@ class ScoreTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetRawAboveMax() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'Value must be less than or equal to \'max\' (90) [95]'
         );
@@ -130,7 +130,7 @@ class ScoreTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetMinAboveRaw() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'Value must be less than or equal to \'raw\' (50) [60]'
         );
@@ -139,7 +139,7 @@ class ScoreTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetMinAboveMax() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'Value must be less than \'max\' (90) [95]'
         );
@@ -164,7 +164,7 @@ class ScoreTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetMaxBelowRaw() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'Value must be greater than or equal to \'raw\' (60) [50]'
         );
@@ -173,7 +173,7 @@ class ScoreTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetMaxBelowMin() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'Value must be greater than \'min\' (10) [5]'
         );

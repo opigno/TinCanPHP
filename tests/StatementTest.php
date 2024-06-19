@@ -28,7 +28,7 @@ use TinCan\Verb;
 use TinCan\Version;
 use Namshi\JOSE\JWS;
 
-class StatementTest extends \PHPUnit_Framework_TestCase {
+class StatementTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
 
     public function testInstantiation() {
@@ -47,17 +47,17 @@ class StatementTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testFromJSONInvalidNull() {
-        $this->setExpectedException('TinCan\JSONParseErrorException');
+        $this->expectException('TinCan\JSONParseErrorException');
         $obj = Statement::fromJSON(null);
     }
 
     public function testFromJSONInvalidEmptyString() {
-        $this->setExpectedException('TinCan\JSONParseErrorException');
+        $this->expectException('TinCan\JSONParseErrorException');
         $obj = Statement::fromJSON('');
     }
 
     public function testFromJSONInvalidMalformed() {
-        $this->setExpectedException('TinCan\JSONParseErrorException');
+        $this->expectException('TinCan\JSONParseErrorException');
         $obj = Statement::fromJSON('{id:"some value"}');
     }
 
@@ -89,7 +89,7 @@ class StatementTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetId() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'arg1 must be a UUID "some invalid id"'
         );
@@ -99,7 +99,7 @@ class StatementTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetStoredInvalidArgumentException() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'type of arg1 must be string or DateTime'
         );
@@ -602,12 +602,12 @@ class StatementTest extends \PHPUnit_Framework_TestCase {
         $obj = new Statement();
 
         if (PHP_MAJOR_VERSION >= 7 && PHP_MINOR_VERSION >= 1) {
-            $this->setExpectedException(
+            $this->expectException(
                 'ArgumentCountError'
             );
         }
         else {
-            $this->setExpectedException(
+            $this->expectException(
                 'PHPUnit_Framework_Error_Warning',
                 (getenv('TRAVIS_PHP_VERSION') == "hhvm" ? 'sign() expects at least 2 parameters, 0 given' : 'Missing argument 1')
             );
@@ -619,12 +619,12 @@ class StatementTest extends \PHPUnit_Framework_TestCase {
         $obj = new Statement();
 
         if (PHP_MAJOR_VERSION >= 7 && PHP_MINOR_VERSION >= 1) {
-            $this->setExpectedException(
+            $this->expectException(
                 'ArgumentCountError'
             );
         }
         else {
-            $this->setExpectedException(
+            $this->expectException(
                 'PHPUnit_Framework_Error_Warning',
                 (getenv('TRAVIS_PHP_VERSION') == "hhvm" ? 'sign() expects at least 2 parameters, 1 given' : 'Missing argument 2')
             );
@@ -633,7 +633,7 @@ class StatementTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSignNoActor() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'actor must be present in signed statement'
         );
@@ -643,7 +643,7 @@ class StatementTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSignNoVerb() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'verb must be present in signed statement'
         );
@@ -657,7 +657,7 @@ class StatementTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSignNoObject() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'object must be present in signed statement'
         );
@@ -672,7 +672,7 @@ class StatementTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSignInvalidAlgorithm() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             "Invalid signing algorithm: 'not right'"
         );
@@ -690,7 +690,7 @@ class StatementTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSignEmptyPassword() {
-        $this->setExpectedException(
+        $this->expectException(
             'Exception',
             'Unable to get private key: error:0906A068:PEM routines:PEM_do_header:bad password read'
         );

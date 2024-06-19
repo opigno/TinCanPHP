@@ -19,7 +19,7 @@ namespace TinCanTest;
 
 use TinCan\Version;
 
-class VersionTest extends \PHPUnit_Framework_TestCase {
+class VersionTest extends \PHPUnit\Framework\TestCase {
     public function testStaticFactoryReturnsInstance() {
         $this->assertInstanceOf("TinCan\Version", Version::v101(), "factory returns instance");
     }
@@ -64,7 +64,7 @@ class VersionTest extends \PHPUnit_Framework_TestCase {
 
     public function testInvalidArgumentExceptionIsThrown() {
         $number = '1.8.01';
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             "Invalid version [$number]"
         );

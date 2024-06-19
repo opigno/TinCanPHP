@@ -20,7 +20,7 @@ namespace TinCanTest;
 use TinCan\StatementRef;
 use TinCan\Util;
 
-class StatementRefTest extends \PHPUnit_Framework_TestCase {
+class StatementRefTest extends \PHPUnit\Framework\TestCase {
     public function testInstantiation() {
         $obj = new StatementRef();
         $this->assertInstanceOf('TinCan\StatementRef', $obj);
@@ -41,7 +41,7 @@ class StatementRefTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetIdThrowsException() {
-        $this->setExpectedException(
+        $this->expectException(
             'InvalidArgumentException',
             'arg1 must be a UUID'
         );

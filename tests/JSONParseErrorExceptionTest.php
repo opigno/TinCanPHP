@@ -17,14 +17,14 @@
 
 use TinCan\JSONParseErrorException;
 
-class JSONParseErrorExceptionTest extends PHPUnit_Framework_TestCase
+class JSONParseErrorExceptionTest extends \PHPUnit\Framework\TestCase
 {
     private $exception;
     private $malformedValue  = '.....';
     private $jsonErrorNumber;
     private $jsonErrorMessage;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->jsonErrorNumber = JSON_ERROR_SYNTAX;
         $this->jsonErrorMessage = 'Syntax error, malformed JSON';
         $this->exception = new JSONParseErrorException(
