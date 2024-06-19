@@ -2,9 +2,9 @@ name: PHP Composer
 
 on:
   push:
-    branches: [ "dependency-management-test" ]
-  # pull_request:
-  #   branches: [ "dependency-management-test" ]
+    branches: [ "dependency-management-test", "dependency-management", "master" ]
+#  pull_request:
+#    branches: [ "master" ]
 
 permissions:
   contents: read
@@ -15,12 +15,10 @@ jobs:
     strategy:
       matrix:
         operating-system: ['ubuntu-latest']
-        php-versions: ['7.4']
-        phpunit-versions: ['4']
-#        include:
-#          - operating-system: 'ubuntu-latest'
-#            php-versions: '7.4'
-#            phpunit-versions: 4
+        # Do we need to check the older version '7.4', '8.0', '8.1'?
+        php-versions: ['8.2']
+        phpunit-versions: ['9']
+
     steps:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
