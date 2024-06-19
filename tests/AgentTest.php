@@ -22,6 +22,7 @@ use TinCan\AgentAccount;
 
 class AgentTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
+    use TestPhpUnitAssertionTrait;
 
     public function testInstantiation() {
         $obj = new Agent();
@@ -192,7 +193,7 @@ class AgentTest extends \PHPUnit\Framework\TestCase {
         // make sure it doesn't add mailto when null
         //
         $obj->setMbox(null);
-        $this->assertAttributeEmpty('mbox', $obj);
+        $this->assertAttributeEmpty('mbox', $obj, 'mbox empty');
     }
 
     public function testGetMbox_sha1sum() {

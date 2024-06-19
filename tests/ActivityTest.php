@@ -21,6 +21,7 @@ use TinCan\Activity;
 
 class ActivityTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
+    use TestPhpUnitAssertionTrait;
 
     static private $DEFINITION;
 

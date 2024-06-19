@@ -27,6 +27,7 @@ use TinCan\Util;
 
 class ContextTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
+    use TestPhpUnitAssertionTrait;
 
     private $emptyProperties = array(
         'registration',

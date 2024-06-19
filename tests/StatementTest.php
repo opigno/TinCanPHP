@@ -29,7 +29,8 @@ use TinCan\Version;
 use Namshi\JOSE\JWS;
 
 class StatementTest extends \PHPUnit\Framework\TestCase {
-    use TestCompareWithSignatureTrait;
+  use TestCompareWithSignatureTrait;
+  use TestPhpUnitAssertionTrait;
 
     public function testInstantiation() {
         $obj = new Statement();
@@ -85,7 +86,7 @@ class StatementTest extends \PHPUnit\Framework\TestCase {
         $obj->stamp();
 
         $this->assertAttributeInternalType('string', 'timestamp', $obj, 'timestamp is string');
-        $this->assertRegExp(Util::UUID_REGEX, $obj->getId(), 'id is UUId');
+        $this->assertMatchesRegularExpression(Util::UUID_REGEX, $obj->getId(), 'id is UUId');
     }
 
     public function testSetId() {
@@ -608,7 +609,7 @@ class StatementTest extends \PHPUnit\Framework\TestCase {
         }
         else {
             $this->expectException(
-                'PHPUnit_Framework_Error_Warning',
+                '\PHPUnit\Framework\Error\Warning',
                 (getenv('TRAVIS_PHP_VERSION') == "hhvm" ? 'sign() expects at least 2 parameters, 0 given' : 'Missing argument 1')
             );
         }
@@ -625,7 +626,7 @@ class StatementTest extends \PHPUnit\Framework\TestCase {
         }
         else {
             $this->expectException(
-                'PHPUnit_Framework_Error_Warning',
+                '\PHPUnit\Framework\Error\Warning',
                 (getenv('TRAVIS_PHP_VERSION') == "hhvm" ? 'sign() expects at least 2 parameters, 1 given' : 'Missing argument 2')
             );
         }
@@ -727,7 +728,7 @@ class StatementTest extends \PHPUnit\Framework\TestCase {
 
     public function testSignInvalidX5cErrorToException() {
         $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error',
+            '\PHPUnit\Framework\Error\Error',
             '/supplied parameter cannot be coerced into an X509 certificate!/'
         );
 
@@ -807,7 +808,7 @@ class StatementTest extends \PHPUnit\Framework\TestCase {
 
     public function testVerifyInvalidX5cErrorToException() {
         $this->setExpectedExceptionRegExp(
-            'PHPUnit_Framework_Error',
+          '\PHPUnit\Framework\Error\Error',
             '/supplied parameter cannot be coerced into an X509 certificate!/'
         );
 

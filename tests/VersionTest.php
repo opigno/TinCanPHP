@@ -20,6 +20,8 @@ namespace TinCanTest;
 use TinCan\Version;
 
 class VersionTest extends \PHPUnit\Framework\TestCase {
+    use TestPhpUnitAssertionTrait;
+
     public function testStaticFactoryReturnsInstance() {
         $this->assertInstanceOf("TinCan\Version", Version::v101(), "factory returns instance");
     }

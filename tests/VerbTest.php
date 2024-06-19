@@ -21,6 +21,7 @@ use TinCan\Verb;
 
 class VerbTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
+    use TestPhpUnitAssertionTrait;
 
     static private $DISPLAY;
 

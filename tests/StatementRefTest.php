@@ -21,6 +21,8 @@ use TinCan\StatementRef;
 use TinCan\Util;
 
 class StatementRefTest extends \PHPUnit\Framework\TestCase {
+    use TestPhpUnitAssertionTrait;
+
     public function testInstantiation() {
         $obj = new StatementRef();
         $this->assertInstanceOf('TinCan\StatementRef', $obj);

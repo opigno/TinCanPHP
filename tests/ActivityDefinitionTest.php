@@ -20,6 +20,8 @@ namespace TinCanTest;
 use TinCan\ActivityDefinition;
 
 class ActivityDefinitionTest extends \PHPUnit\Framework\TestCase {
+    use TestPhpUnitAssertionTrait;
+
     const NAME = 'testName';
 
     private $emptyProperties = array(

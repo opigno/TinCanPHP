@@ -23,6 +23,7 @@ use TinCan\Score;
 
 class ResultTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
+    use TestPhpUnitAssertionTrait;
 
     private $emptyProperties = array(
         'success',

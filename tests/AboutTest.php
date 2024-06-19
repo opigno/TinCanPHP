@@ -20,6 +20,8 @@ namespace TinCanTest;
 use TinCan\About;
 
 class AboutTest extends \PHPUnit\Framework\TestCase {
+    use TestPhpUnitAssertionTrait;
+
     const VERSION_1 = '1.0.0';
 
     public function testInstantiation() {

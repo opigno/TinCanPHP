@@ -23,6 +23,8 @@ use TinCan\Statement;
 use TinCan\Util;
 
 class StatementVariationsTest extends \PHPUnit\Framework\TestCase {
+    use TestPhpUnitAssertionTrait;
+
     static protected $lrss;
 
     static public function setUpBeforeClass(): void {

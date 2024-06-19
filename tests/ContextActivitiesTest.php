@@ -22,6 +22,7 @@ use TinCan\ContextActivities;
 
 class ContextActivitiesTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
+    use TestPhpUnitAssertionTrait;
 
     static private $listProps = ['category', 'parent', 'grouping', 'other'];
     static private $common_activity_cfg = [

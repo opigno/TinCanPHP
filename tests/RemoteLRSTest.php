@@ -29,6 +29,7 @@ use TinCan\Verb;
 use TinCan\Version;
 
 class RemoteLRSTest extends \PHPUnit\Framework\TestCase {
+    use TestPhpUnitAssertionTrait;
     static private $endpoint;
     static private $version;
     static private $username;

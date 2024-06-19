@@ -21,6 +21,7 @@ use TinCan\Score;
 
 class ScoreTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
+    use TestPhpUnitAssertionTrait;
 
     private $emptyProperties = array(
         'scaled',
@@ -54,7 +55,7 @@ class ScoreTest extends \PHPUnit\Framework\TestCase {
         $score->setScaled(0.9);
 
         $this->assertEquals($score->getScaled(), 0.9);
-        $this->assertInternalType('float', $score->getScaled());
+        $this->assertInternalType('float', $score->getScaled(), 'type is float');
     }
 
     public function testSetScaledBelowMin() {
@@ -80,7 +81,7 @@ class ScoreTest extends \PHPUnit\Framework\TestCase {
         $score->setRaw(90);
 
         $this->assertEquals($score->getRaw(), 90);
-        $this->assertInternalType('float', $score->getRaw());
+        $this->assertInternalType('float', $score->getRaw(), 'type is float');
 
         $score = new Score(['min' => 65, 'max' => 85]);
         $score->setRaw(75);
@@ -118,7 +119,7 @@ class ScoreTest extends \PHPUnit\Framework\TestCase {
         $score->setMin(9);
 
         $this->assertEquals($score->getMin(), 9);
-        $this->assertInternalType('float', $score->getMin());
+        $this->assertInternalType('float', $score->getMin(), 'type is float');
 
         $score = new Score(['raw' => 65, 'max' => 85]);
         $score->setMin(35);
@@ -152,7 +153,7 @@ class ScoreTest extends \PHPUnit\Framework\TestCase {
         $score->setMax(96.3);
 
         $this->assertEquals($score->getMax(), 96.3);
-        $this->assertInternalType('float', $score->getMax());
+        $this->assertInternalType('float', $score->getMax(), 'type is float');
 
         $score = new Score(['raw' => 65, 'min' => 35]);
         $score->setMax(85.4);

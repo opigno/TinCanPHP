@@ -23,6 +23,7 @@ use TinCan\Group;
 
 class GroupTest extends \PHPUnit\Framework\TestCase {
     use TestCompareWithSignatureTrait;
+    use TestPhpUnitAssertionTrait;
 
     public function testInstantiation() {
         $obj = new Group();

@@ -17,15 +17,16 @@
 
 namespace TinCanTest;
 
-class AsVersionTraitTest extends \PHPUnit\Framework\TestCase
-{
+class AsVersionTraitTest extends \PHPUnit\Framework\TestCase {
+    use TestPhpUnitAssertionTrait;
+
     public function testTraitExists() {
         $this->assertTrue(trait_exists('TinCan\AsVersionTrait'));
     }
 
     public function testAsVersionReturnsArray() {
         $trait = $this->getMockForTrait('TinCan\AsVersionTrait');
-        $this->assertInternalType('array', $trait->asVersion('test'));
+        $this->assertInternalType('array', $trait->asVersion('test'), 'asVersion returns array');
     }
 
     public function testMagicSetThrowsException() {
