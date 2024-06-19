@@ -54,4 +54,10 @@ jobs:
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Run test suite
-      run: ./vendor/bin/phpunit --bootstrap ./tests/config/bootstrap.php tests
+      run: |
+        cp tests/config/config.github.php tests/config/config.php
+        ./vendor/bin/phpunit --bootstrap ./tests/config/bootstrap.php tests
+      env:
+        LRS_ENDPOINT: ${{ secrets.LRS_ENDPOINT }}
+        LRS_USERNAME: ${{ secrets.LRS_USERNAME }}
+        LRS_PASSWORD: ${{ secrets.LRS_PASSWORD }}

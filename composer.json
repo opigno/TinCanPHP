@@ -34,7 +34,7 @@
     },
     "require-dev": {
         "phpdocumentor/phpdocumentor": "2.*",
-        "phpunit/phpunit": "^4"
+        "phpunit/phpunit": "^9.2"
     },
     "autoload": {
         "psr-4": {
@@ -45,8 +45,5 @@
         "psr-4": {
             "TinCanTest\\": "tests/"
         }
-    },
-    "scripts": {
-        "test": "phpunit --bootstrap tests/config/bootstrap.php tests"
     }
 }
