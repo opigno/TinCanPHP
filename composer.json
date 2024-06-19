@@ -45,5 +45,8 @@
         "psr-4": {
             "TinCanTest\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "phpunit --bootstrap tests/config/bootstrap.php tests"
     }
 }
