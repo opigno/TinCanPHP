@@ -40,8 +40,8 @@ class Statement extends StatementBase
     protected $version;
     protected $attachments;
 
-    public function __construct() {
-        call_user_func_array('parent::__construct', func_get_args());
+    public function __construct(...$args) {
+        parent::__construct(...$args);
 
         if (func_num_args() == 1) {
             $arg = func_get_arg(0);
